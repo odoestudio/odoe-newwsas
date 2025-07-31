@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watching Video - V-Stream</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gray-800/80 backdrop-blur-lg sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="/index.html" class="flex-shrink-0 flex items-center space-x-2">
+                        <i class="fas fa-play-circle text-purple-500 text-3xl"></i>
+                        <span class="font-bold text-xl text-white">V-Stream</span>
+                    </a>
+                </div>
+                <div class="flex-1 max-w-md mx-8 items-center hidden md:flex">
+                    <div class="relative w-full">
+                        <input type="text" class="bg-gray-700 text-white w-full rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Search...">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium hidden md:block">Home</a>
+                    <a href="/profile.html" class="flex items-center space-x-2">
+                        <img class="h-8 w-8 rounded-full" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User Avatar">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left Column: Video Player and Info -->
+            <div class="w-full lg:w-2/3">
+                <!-- Video Player -->
+                <div id="video-player-container" class="aspect-video bg-black rounded-lg shadow-2xl overflow-hidden mb-4">
+                    <!-- Video element will be injected here -->
+                </div>
+
+                <!-- Video Details -->
+                <div id="video-details-container">
+                    <!-- Video details will be injected here -->
+                </div>
+
+                <!-- Comments Section -->
+                <div class="mt-8 bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4"><span id="comment-count">0</span> Comments</h3>
+                    <!-- Add Comment Form -->
+                    <div class="flex items-start space-x-4 mb-6">
+                        <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Your Avatar">
+                        <div class="flex-1">
+                            <textarea class="w-full bg-gray-700 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" rows="2" placeholder="Add a comment..."></textarea>
+                            <div class="text-right mt-2">
+                                <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors">Comment</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comments List -->
+                    <div id="comments-list" class="space-y-6">
+                        <!-- Comments will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Recommended Videos -->
+            <aside class="w-full lg:w-1/3">
+                <h3 class="text-xl font-bold mb-4">Up Next</h3>
+                <div id="recommended-videos-sidebar" class="space-y-4">
+                    <!-- Recommended videos will be injected here -->
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Odoe Pill -->
+    <a href="https://odoe.studio" target="_blank" class="fixed bottom-4 right-4 bg-black/50 text-white text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm hover:bg-purple-600 transition-colors duration-300 shadow-lg">
+        Made by Odoe
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+    </script>
+    <script src="js/watch.js"></script>
+</body>
+</html>
